@@ -14,7 +14,7 @@ namespace Form
             this.shape = shape;
         }
 
-        public void MoveImg()
+        public object MoveImg()
         {
             int x = 0, y = 0;
             while (true)
@@ -30,13 +30,13 @@ namespace Form
                         }
                         break;
                     case ConsoleKey.RightArrow:
-                        if (x < Console.WindowWidth - shape.GetWidth())
+                        if (x < Console.WindowWidth - shape.width)
                         {
                             x++;
                         }
                         break;
                     case ConsoleKey.DownArrow:
-                        if (y < Console.WindowHeight - shape.GetHeight())
+                        if (y < Console.WindowHeight - shape.width)
                         {
                             y++;
                         }
@@ -46,6 +46,9 @@ namespace Form
                         {
                             y--;
                         }
+                        break;
+                    case ConsoleKey.Escape:
+                        Environment.Exit(0);
                         break;
                 }
             }

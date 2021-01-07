@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Form
 {
-    class TriangleBuilder : IBuilder
+    class TriangleBuilder : IBuilderImage
     {
         public void Create()
         {
@@ -22,7 +22,7 @@ namespace Form
             }
             else
             {
-                Create();
+                Console.WriteLine("You must enter a number.");
             }
         }
     }

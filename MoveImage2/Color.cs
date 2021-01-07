@@ -4,30 +4,35 @@ using System.Text;
 
 namespace Form
 {
-    class Color
+    class ColorForConsole
     {
         private string foregroundColor;
 
-        public Color(string foregrcolor)
+        public ColorForConsole(string foregrcolor)
         {
             this.foregroundColor = foregrcolor;
+        }
+
+        public static void SetConsoleColor(string color)
+        {
+            ConsoleColor consColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
+            Console.ForegroundColor = consColor;
         }
 
         public void GetConsoleColor()
         {
             string[] names = Enum.GetNames(typeof(ConsoleColor));
 
-            bool num = false;
+            bool selected = false;
             foreach (string color in names)
             {
                 if (color == foregroundColor)
                 {
-                    ConsoleColor consCol = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
-                    Console.ForegroundColor = consCol;
-                    num = true;
+                    SetConsoleColor(color);
+                    selected = true;
                 }
             }
-            if (num == false)
+            if (selected == false)
             {
                 Console.WriteLine("You can not do that...You have the following options: Black, Blue, " +
                 "Cyan, Gray, Green, Magenta, Red, White, YellowDarkBlue, DarkCyan, DarkGray, " +

@@ -6,23 +6,12 @@ namespace Form
 {
     class Triangle : IShape
     {
-        private int height;
-        private int width;
-
+        public int height { get; }
+        public int width { get; }
 
         public Triangle(int sides)
         {
             this.height = this.width = sides;
-        }
-
-        public int GetHeight()
-        {
-            return this.height;
-        }
-
-        public int GetWidth()
-        {
-            return this.width;
         }
 
         public void Print(int x, int y)

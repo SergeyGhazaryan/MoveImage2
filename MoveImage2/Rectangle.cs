@@ -6,23 +6,13 @@ namespace Form
 {
     class Rectangle : IShape
     {
-        private int height;
-        private int width;
+        public int height { get; }
+        public int width { get; }
 
         public Rectangle(int height, int width)
         {
             this.height = height;
             this.width = width;
-        }
-
-        public int GetHeight()
-        {
-            return this.height;
-        }
-
-        public int GetWidth()
-        {
-            return this.width;
         }
 
         public void Print(int x, int y)

@@ -11,22 +11,22 @@ namespace Form
             Console.Write("Input console color: ");
 
             string foregroundColor = Console.ReadLine();
-            Color consColor = new Color(foregroundColor);
+            ColorForConsole consColor = new ColorForConsole(foregroundColor);
             consColor.GetConsoleColor();
 
             Console.Write("Choose your image type(1-Rectangle, 2-Triangle): ");
             string str = Console.ReadLine();
             int.TryParse(str, out int type);
-            IBuilder builder;
-            if (type == 1)
+            IBuilderImage builderImage;
+            if (type == 1) //rectangle
             {
-                builder = new RectangleBuilder();
-                builder.Create();
+                builderImage = new RectangleBuilder();
+                builderImage.Create();
             }
-            else if (type == 2)
+            else if (type == 2) //triangle
             {
-                builder = new TriangleBuilder();
-                builder.Create();
+                builderImage = new TriangleBuilder();
+                builderImage.Create();
             }
             else
             {

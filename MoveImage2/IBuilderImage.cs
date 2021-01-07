@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Form
 {
-    interface IBuilder
+    interface IBuilderImage
     {
         void Create();
     }

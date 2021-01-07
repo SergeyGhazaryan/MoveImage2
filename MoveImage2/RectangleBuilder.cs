@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Form
 {
-    class RectangleBuilder : IBuilder
+    class RectangleBuilder : IBuilderImage
     {
         public void Create()
         {
@@ -25,7 +25,7 @@ namespace Form
             }
             else
             {
-                Create();
+                Console.WriteLine("You must enter a number.");
             }
         }
     }
