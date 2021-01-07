@@ -6,11 +6,11 @@ namespace Form
 {
     class Color
     {
-        private string foregrcolor;
+        private string foregroundColor;
 
         public Color(string foregrcolor)
         {
-            this.foregrcolor = foregrcolor;
+            this.foregroundColor = foregrcolor;
         }
 
         public void GetConsoleColor()
@@ -20,7 +20,7 @@ namespace Form
             bool num = false;
             foreach (string color in names)
             {
-                if (color == foregrcolor)
+                if (color == foregroundColor)
                 {
                     ConsoleColor consCol = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
                     Console.ForegroundColor = consCol;

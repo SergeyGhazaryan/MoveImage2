@@ -4,17 +4,26 @@ using System.Text;
 
 namespace Form
 {
-    class TriangleBuilder
+    class TriangleBuilder : IBuilder
     {
-        public void CreateTriangle(int type)
+        public void Create()
         {
             Console.WriteLine("Enter the side of the triangle.");
             Console.WriteLine();
             Console.Write("Sides: ");
-            int sides = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-            MoveImage moveImage = new MoveImage(sides, sides);
-            moveImage.MoveImg(type);
+            string s = Console.ReadLine();
+            bool number = int.TryParse(s, out int sides);
+            if (number)
+            {
+                Console.WriteLine();
+                IShape shape = new Triangle(sides);
+                MoveImage moveImage = new MoveImage(shape);
+                moveImage.MoveImg();
+            }
+            else
+            {
+                Create();
+            }
         }
     }
 }

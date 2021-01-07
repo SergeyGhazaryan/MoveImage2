@@ -4,21 +4,33 @@ using System.Text;
 
 namespace Form
 {
-    class Triangle
+    class Triangle : IShape
     {
-        private int sides;
+        private int height;
+        private int width;
+
 
         public Triangle(int sides)
         {
-            this.sides = sides;
+            this.height = this.width = sides;
         }
 
-        public void Print(int curs1, int curs2)
+        public int GetHeight()
         {
-            for (int i = 0; i < sides; i++)
+            return this.height;
+        }
+
+        public int GetWidth()
+        {
+            return this.width;
+        }
+
+        public void Print(int x, int y)
+        {
+            for (int i = 0; i < height; i++)
             {
-                Console.SetCursorPosition(curs1, curs2);
-                curs2++;
+                Console.SetCursorPosition(x, y);
+                y++;
                 for (int j = 0; j <= i; j++)
                 {
                     Console.Write("*");

@@ -4,19 +4,29 @@ using System.Text;
 
 namespace Form
 {
-    class RectangleBuilder
+    class RectangleBuilder : IBuilder
     {
-        public void CreateRectangle(int type)
+        public void Create()
         {
             Console.WriteLine("Enter height and width of the rectangle.");
             Console.WriteLine();
             Console.Write("Height: ");
-            int height = Convert.ToInt32(Console.ReadLine());
+            string h = Console.ReadLine();
+            bool number1 = int.TryParse(h, out int height);
             Console.Write("Width: ");
-            int width = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-            MoveImage moveImage = new MoveImage(height, width);
-            moveImage.MoveImg(type);
+            string w = Console.ReadLine();
+            bool number2 = int.TryParse(w, out int width);
+            if (number1 && number2)
+            {
+                Console.WriteLine();
+                IShape shape = new Rectangle(height, width);
+                MoveImage moveImage = new MoveImage(shape);
+                moveImage.MoveImg();
+            }
+            else
+            {
+                Create();
+            }
         }
     }
 }

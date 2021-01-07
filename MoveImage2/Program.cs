@@ -10,21 +10,23 @@ namespace Form
         {
             Console.Write("Input console color: ");
 
-            string foregrcolor = Console.ReadLine();
-            Color consColor = new Color(foregrcolor);
+            string foregroundColor = Console.ReadLine();
+            Color consColor = new Color(foregroundColor);
             consColor.GetConsoleColor();
 
             Console.Write("Choose your image type(1-Rectangle, 2-Triangle): ");
-            int type = Convert.ToInt32(Console.ReadLine());
+            string str = Console.ReadLine();
+            int.TryParse(str, out int type);
+            IBuilder builder;
             if (type == 1)
             {
-                RectangleBuilder rectangleBuilder = new RectangleBuilder();
-                rectangleBuilder.CreateRectangle(type);
+                builder = new RectangleBuilder();
+                builder.Create();
             }
             else if (type == 2)
             {
-                TriangleBuilder triangleBuilder = new TriangleBuilder();
-                triangleBuilder.CreateTriangle(type);
+                builder = new TriangleBuilder();
+                builder.Create();
             }
             else
             {

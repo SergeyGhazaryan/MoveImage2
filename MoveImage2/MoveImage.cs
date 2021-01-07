@@ -7,63 +7,47 @@ namespace Form
 {
     class MoveImage
     {
-        private int height;
-        private int width;
+        private IShape shape;
 
-        public MoveImage(int height, int width)
+        public MoveImage(IShape shape)
         {
-            this.height = height;
-            this.width = width;
+            this.shape = shape;
         }
 
-        public void MoveImg(int type)
+        public void MoveImg()
         {
-            int curs1 = 0, curs2 = 0;
+            int x = 0, y = 0;
             while (true)
             {
-                Print(type, curs1, curs2);
+                Console.Clear();
+                shape.Print(x, y);
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.LeftArrow:
-                        if (curs1 > 0)
+                        if (x > 0)
                         {
-                            curs1--;
+                            x--;
                         }
                         break;
                     case ConsoleKey.RightArrow:
-                        if (curs1 < Console.WindowWidth - width)
+                        if (x < Console.WindowWidth - shape.GetWidth())
                         {
-                            curs1++;
+                            x++;
                         }
                         break;
                     case ConsoleKey.DownArrow:
-                        if (curs2 < Console.WindowHeight - height)
+                        if (y < Console.WindowHeight - shape.GetHeight())
                         {
-                            curs2++;
+                            y++;
                         }
                         break;
                     case ConsoleKey.UpArrow:
-                        if (curs2 > 0)
+                        if (y > 0)
                         {
-                            curs2--;
+                            y--;
                         }
                         break;
                 }
-            }
-        }
-
-        public void Print(int type, int curs1, int curs2)
-        {
-            Console.Clear();
-            if (type == 1)
-            {
-                Rectangle rectangle = new Rectangle(height, width);
-                rectangle.Print(curs1, curs2);
-            }
-            else if (type == 2)
-            {
-                Triangle triangle = new Triangle(height);
-                triangle.Print(curs1, curs2);
             }
         }
     }

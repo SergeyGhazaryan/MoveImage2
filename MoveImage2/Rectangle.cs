@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Form
 {
-    class Rectangle
+    class Rectangle : IShape
     {
         private int height;
         private int width;
@@ -15,12 +15,22 @@ namespace Form
             this.width = width;
         }
 
-        public void Print(int curs1, int curs2)
+        public int GetHeight()
+        {
+            return this.height;
+        }
+
+        public int GetWidth()
+        {
+            return this.width;
+        }
+
+        public void Print(int x, int y)
         {
             for (int i = 0; i < height; i++)
             {
-                Console.SetCursorPosition(curs1, curs2);
-                curs2++;
+                Console.SetCursorPosition(x, y);
+                y++;
                 for (int j = 0; j < width; j++)
                 {
                     Console.Write("*");
