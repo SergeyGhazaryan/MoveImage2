@@ -13,22 +13,21 @@ namespace Form
             this.foregroundColor = foregrcolor;
         }
 
-        public static void SetConsoleColor(string color)
+        public static void SetConsoleColor(string userColor)
         {
-            ConsoleColor consColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
+            ConsoleColor consColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), userColor);
             Console.ForegroundColor = consColor;
         }
 
         public void GetConsoleColor()
         {
-            string[] names = Enum.GetNames(typeof(ConsoleColor));
-
+            string[] namesColor = Enum.GetNames(typeof(ConsoleColor));
             bool selected = false;
-            foreach (string color in names)
+            foreach (string userColor in namesColor)
             {
-                if (color == foregroundColor)
+                if (userColor == foregroundColor)
                 {
-                    SetConsoleColor(color);
+                    SetConsoleColor(userColor);
                     selected = true;
                 }
             }

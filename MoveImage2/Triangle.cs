@@ -6,17 +6,17 @@ namespace Form
 {
     class Triangle : IShape
     {
-        public int height { get; }
-        public int width { get; }
+        public int Height { get; }
+        public int Width { get; }
 
         public Triangle(int sides)
         {
-            this.height = this.width = sides;
+            this.Height = this.Width = sides;
         }
 
         public void Print(int x, int y)
         {
-            for (int i = 0; i < height; i++)
+            for (int i = 0; i < Height; i++)
             {
                 Console.SetCursorPosition(x, y);
                 y++;

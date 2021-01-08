@@ -6,8 +6,8 @@ namespace Form
 {
     interface IShape
     {
-        int height { get; }
-        int width { get; }
+        int Height { get; }
+        int Width { get; }
         void Print(int x, int y);
     }
 }

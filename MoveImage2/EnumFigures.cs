@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Form
 {
-    interface IBuilderImage
+    enum Figures
     {
-        void Create();
+        Rectangle = 1,
+        Triangle
     }
 }

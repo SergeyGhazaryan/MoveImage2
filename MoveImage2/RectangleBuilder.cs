@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Form
 {
-    class RectangleBuilder : IBuilderImage
+    class RectangleBuilder : IFigureBuilder
     {
         public void Create()
         {

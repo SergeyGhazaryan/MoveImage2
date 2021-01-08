@@ -17,16 +17,16 @@ namespace Form
             Console.Write("Choose your image type(1-Rectangle, 2-Triangle): ");
             string str = Console.ReadLine();
             int.TryParse(str, out int type);
-            IBuilderImage builderImage;
-            if (type == 1) //rectangle
+            IFigureBuilder figureBuilder;
+            if (type == (int)Figures.Rectangle)
             {
-                builderImage = new RectangleBuilder();
-                builderImage.Create();
+                figureBuilder = new RectangleBuilder();
+                figureBuilder.Create();
             }
-            else if (type == 2) //triangle
+            else if (type == (int)Figures.Triangle)
             {
-                builderImage = new TriangleBuilder();
-                builderImage.Create();
+                figureBuilder = new TriangleBuilder();
+                figureBuilder.Create();
             }
             else
             {
