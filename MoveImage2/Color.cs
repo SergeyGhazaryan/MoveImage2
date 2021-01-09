@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Form
 {
@@ -22,8 +23,12 @@ namespace Form
         public void GetConsoleColor()
         {
             string[] namesColor = Enum.GetNames(typeof(ConsoleColor));
+
             bool selected = false;
-            foreach (string userColor in namesColor)
+            var linqQueryForColor = from userColor in namesColor
+                      select userColor;
+
+            foreach (var userColor in linqQueryForColor)
             {
                 if (userColor == foregroundColor)
                 {

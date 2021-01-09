@@ -18,12 +18,13 @@ namespace Form
             string str = Console.ReadLine();
             int.TryParse(str, out int type);
             IFigureBuilder figureBuilder;
-            if ((Figures)type == Figures.Rectangle)
+            var figureType = (Figures)type;
+            if (figureType == Figures.Rectangle)
             {
                 figureBuilder = new RectangleBuilder();
                 figureBuilder.Create();
             }
-            else if ((Figures)type == Figures.Triangle)
+            else if (figureType == Figures.Triangle)
             {
                 figureBuilder = new TriangleBuilder();
                 figureBuilder.Create();
