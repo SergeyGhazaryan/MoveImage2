@@ -18,20 +18,17 @@ namespace Form
             string str = Console.ReadLine();
             int.TryParse(str, out int type);
             IFigureBuilder figureBuilder;
-            if (type == (int)Figures.Rectangle)
+            if ((Figures)type == Figures.Rectangle)
             {
                 figureBuilder = new RectangleBuilder();
                 figureBuilder.Create();
             }
-            else if (type == (int)Figures.Triangle)
+            else if ((Figures)type == Figures.Triangle)
             {
                 figureBuilder = new TriangleBuilder();
                 figureBuilder.Create();
             }
-            else
-            {
-                Console.WriteLine("There is no such type.");
-            }
+            Console.WriteLine("There is no such type.");
         }
     }
 }

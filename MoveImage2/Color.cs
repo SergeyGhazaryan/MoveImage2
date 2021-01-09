@@ -31,7 +31,7 @@ namespace Form
                     selected = true;
                 }
             }
-            if (selected == false)
+            if (!selected)
             {
                 Console.WriteLine("You can not do that...You have the following options: Black, Blue, " +
                 "Cyan, Gray, Green, Magenta, Red, White, YellowDarkBlue, DarkCyan, DarkGray, " +
