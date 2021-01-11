@@ -11,8 +11,8 @@ namespace Form
             Console.Write("Input console color: ");
 
             string foregroundColor = Console.ReadLine();
-            ColorForConsole consColor = new ColorForConsole(foregroundColor);
-            consColor.GetConsoleColor();
+            ColorForConsole consoleColor = new ColorForConsole(foregroundColor);
+            consoleColor.GetConsoleColor();
 
             Console.Write("Choose your image type(1-Rectangle, 2-Triangle): ");
             string str = Console.ReadLine();
