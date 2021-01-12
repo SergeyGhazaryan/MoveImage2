@@ -6,6 +6,6 @@ namespace Form
 {
     interface IFigureBuilder
     {
-        void Create();
+        IShape Create();
     }
 }

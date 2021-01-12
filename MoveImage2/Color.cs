@@ -24,9 +24,7 @@ namespace Form
         {
             string[] namesColor = Enum.GetNames(typeof(ConsoleColor));
 
-            var linqQueryForColor = from userColor in namesColor
-                       where userColor.Equals(foregroundColor)
-                       select userColor;
+            var linqQueryForColor = namesColor.Where(userColor => userColor.Equals(foregroundColor));
 
             if (linqQueryForColor.Any())
             {

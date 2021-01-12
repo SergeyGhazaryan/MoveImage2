@@ -6,7 +6,9 @@ namespace Form
 {
     class TriangleBuilder : IFigureBuilder
     {
-        public void Create()
+        private IShape shape;
+
+        public IShape Create()
         {
             bool notNumber = true;
             while (notNumber)
@@ -19,9 +21,9 @@ namespace Form
                 if (number)
                 {
                     Console.WriteLine();
-                    IShape shape = new Triangle(sides);
-                    MoveImage moveImage = new MoveImage(shape);
-                    moveImage.MoveImg();
+                    shape = new Triangle(sides);
+                    /*MoveImage moveImage = new MoveImage(shape);
+                    moveImage.MoveImg();*/
                     notNumber = false;
                 }
                 else
@@ -29,6 +31,7 @@ namespace Form
                     Console.WriteLine("You must enter a number.");
                 }
             }
+            return shape;
         }
     }
 }

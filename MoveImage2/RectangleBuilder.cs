@@ -6,7 +6,8 @@ namespace Form
 {
     class RectangleBuilder : IFigureBuilder
     {
-        public void Create()
+        private IShape shape;
+        public IShape Create()
         {
             bool notNumber = true;
             while (notNumber)
@@ -22,9 +23,9 @@ namespace Form
                 if (number1 && number2)
                 {
                     Console.WriteLine();
-                    IShape shape = new Rectangle(height, width);
-                    MoveImage moveImage = new MoveImage(shape);
-                    moveImage.MoveImg();
+                    shape = new Rectangle(height, width);
+                    /*MoveImage moveImage = new MoveImage(shape);
+                    moveImage.MoveImg();*/
                     notNumber = false;
                 }
                 else 
@@ -32,6 +33,7 @@ namespace Form
                     Console.WriteLine("You must enter a number.");
                 }
             }
+            return shape;
         }
     }
 }
