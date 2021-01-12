@@ -28,15 +28,15 @@ namespace Form
                        where userColor.Equals(foregroundColor)
                        select userColor;
 
-            if (linqQueryForColor.Count() == 0)
+            if (linqQueryForColor.Any())
+            {
+                SetConsoleColor(linqQueryForColor.Single());
+            }
+            else
             {
                 Console.WriteLine("You can not do that...You have the following options: Black, Blue, " +
                 "Cyan, Gray, Green, Magenta, Red, White, YellowDarkBlue, DarkCyan, DarkGray, " +
                 "DarkGreen, DarkMagenta, DarkRed, DarkYellow");
-            }
-            else
-            {
-                SetConsoleColor(linqQueryForColor.Single());
             }
         }
     }
