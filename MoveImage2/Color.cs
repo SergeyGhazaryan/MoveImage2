@@ -20,23 +20,19 @@ namespace Form
             Console.ForegroundColor = consColor;
         }
 
-        public void GetConsoleColor()
+        public void SelectConsoleColor()
         {
             string[] namesColor = Enum.GetNames(typeof(ConsoleColor));
 
-            bool selected = false;
             var linqQueryForColor = from userColor in namesColor
-                      select userColor;
+                       where userColor.Equals(foregroundColor)
+                       select userColor;
 
-            foreach (var userColor in linqQueryForColor)
+            try
             {
-                if (userColor == foregroundColor)
-                {
-                    SetConsoleColor(userColor);
-                    selected = true;
-                }
+                SetConsoleColor(linqQueryForColor.Single());
             }
-            if (!selected)
+            catch
             {
                 Console.WriteLine("You can not do that...You have the following options: Black, Blue, " +
                 "Cyan, Gray, Green, Magenta, Red, White, YellowDarkBlue, DarkCyan, DarkGray, " +

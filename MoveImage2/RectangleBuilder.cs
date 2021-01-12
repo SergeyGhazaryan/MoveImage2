@@ -27,7 +27,7 @@ namespace Form
                     moveImage.MoveImg();
                     notNumber = false;
                 }
-                else if (!number1 || !number2)
+                else 
                 {
                     Console.WriteLine("You must enter a number.");
                 }

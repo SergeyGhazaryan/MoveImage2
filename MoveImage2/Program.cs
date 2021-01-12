@@ -12,7 +12,7 @@ namespace Form
 
             string foregroundColor = Console.ReadLine();
             ColorForConsole consoleColor = new ColorForConsole(foregroundColor);
-            consoleColor.GetConsoleColor();
+            consoleColor.SelectConsoleColor();
 
             Console.Write("Choose your image type(1-Rectangle, 2-Triangle): ");
             string str = Console.ReadLine();
@@ -29,7 +29,10 @@ namespace Form
                 figureBuilder = new TriangleBuilder();
                 figureBuilder.Create();
             }
-            Console.WriteLine("There is no such type.");
+            else
+            {
+                Console.WriteLine("There is no such type.");
+            }
         }
     }
 }
