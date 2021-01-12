@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Form
 {
@@ -22,8 +20,6 @@ namespace Form
                 {
                     Console.WriteLine();
                     shape = new Triangle(sides);
-                    /*MoveImage moveImage = new MoveImage(shape);
-                    moveImage.MoveImg();*/
                     notNumber = false;
                 }
                 else

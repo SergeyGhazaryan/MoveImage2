@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Form
@@ -24,11 +22,11 @@ namespace Form
         {
             string[] namesColor = Enum.GetNames(typeof(ConsoleColor));
 
-            var linqQueryForColor = namesColor.Where(userColor => userColor.Equals(foregroundColor));
+            var linqQueryForColor = namesColor.FirstOrDefault(userColor => userColor.Equals(foregroundColor));
 
-            if (linqQueryForColor.Any())
+            if (linqQueryForColor != null)
             {
-                SetConsoleColor(linqQueryForColor.Single());
+                SetConsoleColor(linqQueryForColor);
             }
             else
             {

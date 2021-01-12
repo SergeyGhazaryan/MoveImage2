@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using Form;
 
 namespace Form
 {
@@ -19,24 +17,23 @@ namespace Form
             bool selected = int.TryParse(str, out int type);
             if (selected)
             {
-                IFigureBuilder figureBuilder;
+                IFigureBuilder figureBuilder = null;
                 var figureType = (Figures)type;
                 IShape shape;
                 MoveImage moveImage;
+
                 if (figureType == Figures.Rectangle)
                 {
                     figureBuilder = new RectangleBuilder();
-                    shape =  figureBuilder.Create();
-                    moveImage = new MoveImage(shape);
-                    moveImage.MoveImg();
                 }
                 else if (figureType == Figures.Triangle)
                 {
                     figureBuilder = new TriangleBuilder();
-                    shape = figureBuilder.Create();
-                    moveImage = new MoveImage(shape);
-                    moveImage.MoveImg();
                 }
+
+                shape = figureBuilder.Create();
+                moveImage = new MoveImage(shape);
+                moveImage.MoveImg();
             }
             else if (!selected)
             {
